@@ -82,5 +82,5 @@ WashingMachine{make='Whirlpool', price=27000}
 WashingMachine is turned on
 Refrigerator{make='LG', price=35000}
 Refrigerator is turned on
-Refrigerator{make='Whirlpool', price=30000}
+Refrigerator{make='Whirlpool', price=30000000}
 Refrigerator is turned on
