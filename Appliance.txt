@@ -1,0 +1,86 @@
+Input :
+
+package com.quasarix.oopsampleprogram;
+
+public abstract class Appliance {
+    private String make;
+    private long price;
+
+    public Appliance(String make, long price) {
+        this.make = make;
+        this.price = price;
+    }
+    public String getMake()
+    {
+        return make;
+    }
+    public void setMake(String make) {
+        this.make = make;
+    }
+    public long getPrice() {
+        return price;
+    }
+    public void setPrice(long price) {
+        this.price = price;
+    }
+    public abstract void turnOn();
+    @Override
+    public String toString() {
+        return "{" +
+                "make='" + make + '\'' +
+                ", price=" + price +
+                '}';
+    }
+}
+package com.quasarix.oopsampleprogram;
+
+public class WashingMachine extends Appliance{
+    public WashingMachine(String make, long price) {
+        super(make, price);
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("WashingMachine is turned on");
+    }
+}
+package com.quasarix.oopsampleprogram;
+
+public class Refrigerator extends Appliance {
+    public Refrigerator(String make, long price) {
+        super(make, price);
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Refrigerator is turned on");
+    }
+}
+package com.quasarix.oopsampleprogram;
+
+public class ApplianceTest {
+    public static void main(String[] args) {
+        Appliance ap= new WashingMachine("Samsung",25000);
+        System.out.println("WashingMachine"+ap);
+        ap.turnOn();
+        Appliance ap2= new WashingMachine("Whirlpool",27000);
+        System.out.println("WashigMachine"+ap2);
+        ap2.turnOn();
+        Appliance ref= new Refrigerator("LG",35000);
+        System.out.println("Refrigerator"+ref);
+        ref.turnOn();
+        Appliance ref2= new Refrigerator("Whirlpool",30000);
+        System.out.println("Refrigerator"+ref2);
+        ref2.turnOn();
+    }
+}
+
+Output :
+WashingMachine{make='Samsung', price=25000}
+WashingMachine is turned on
+WashingMachine{make='Whirlpool', price=27000}
+WashingMachine is turned on
+Refrigerator{make='LG', price=35000}
+Refrigerator is turned on
+Refrigerator{make='Whirlpool', price=30000}
+Refrigerator is turned on
